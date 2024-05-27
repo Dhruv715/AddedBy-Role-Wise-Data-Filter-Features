@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            text-align: center;
+            width: 30vw;
+            color: white;
+            margin: 10px auto;
+            background-color: black;
+            padding: 20px;
+        }
+        .box form div{
+            margin: 10px 0px;
+            display: flex;
+            justify-content: space-between;
+            margin: 10px auto;
+            width: 70%;
+            align-items: center;
+        }
+        .box form div input{
+            padding: 10px 20px;
+        }
+        .box form div:last-child input{
+            margin: 10px auto;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="box">
+        <form method="post">
+            <h1>Add User</h1>
+            <div>
+                <label for="">Name</label>
+                <input type="text" name="name" placeholder="Enter Name Here..">
+            </div>
+            <div>
+                <label for="">Email</label>
+                <input type="email" name="email" id="" placeholder="Enter Email Here..">
+            </div>
+            <div>
+                <label for="">Password</label>
+         
+                <input type="password" name="password" placeholder="Enter Password Here..">
+            </div>
+            <div>
+                <label for="">Role</label>
+                <input type="text" name="role" placeholder="Enter Role Here..">
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Added By</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% result.forEach(function(user) { %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.addedby %></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
